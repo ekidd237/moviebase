@@ -10,13 +10,12 @@ if(isset($_GET['controller']) && !empty($_GET['controller'])){
 if(isset($_GET['function']) && !empty($_GET['function'])){
           $function =$_GET['function'];
 }else{
-          $function ='search';    //default function
+          $function ='init';    //default function
 }
 
 $controller=strtolower($controller);
 
-$fn = SITE_PATH.'controller/'.$controller . '.php';
-
+$fn = SITE_ROOT.'controller/'.$controller . '.php';
 if(file_exists($fn)){
     require_once($fn);
     $controllerClass=$controller.'Controller';
